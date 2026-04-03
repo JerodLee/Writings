@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소설 설계 스튜디오</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>소설 설계 스튜디오</h1>
+      <p>시놉시스부터 목차별 집필까지, 소설의 얼개를 한곳에서 관리하세요.</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>프로젝트 개요</h2>
+        <div class="form-row">
+          <label for="title">작품 제목</label>
+          <input id="title" type="text" placeholder="예: 달의 마지막 편지" />
+        </div>
+        <div class="form-row">
+          <label for="genre">장르/톤</label>
+          <input id="genre" type="text" placeholder="예: 미스터리 판타지, 서정적" />
+        </div>
+        <div class="form-row">
+          <label for="synopsis">시놉시스</label>
+          <textarea id="synopsis" rows="6" placeholder="핵심 갈등, 목표, 결말의 방향을 적어보세요."></textarea>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>주요 인물 개발</h2>
+          <button id="addCharacter" class="btn">인물 추가</button>
+        </div>
+        <div id="characterList" class="stack"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>플롯 구성</h2>
+          <button id="addPlot" class="btn">플롯 비트 추가</button>
+        </div>
+        <div id="plotList" class="stack"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>연대표</h2>
+          <button id="addTimeline" class="btn">사건 추가</button>
+        </div>
+        <div id="timelineList" class="stack"></div>
+      </section>
+
+      <section class="card full-width">
+        <div class="section-header">
+          <h2>목차 & 단락 집필</h2>
+          <button id="addChapter" class="btn">목차 추가</button>
+        </div>
+        <div id="chapterList" class="stack"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <button id="saveBtn" class="btn primary">저장</button>
+      <button id="exportBtn" class="btn">JSON 내보내기</button>
+      <button id="resetBtn" class="btn danger">초기화</button>
+      <span id="status" class="status">로컬 저장소와 동기화됨</span>
+    </footer>
+
+    <template id="characterTemplate">
+      <article class="item-box">
+        <div class="item-actions"><button class="icon danger" data-remove>삭제</button></div>
+        <input data-field="name" placeholder="이름" />
+        <input data-field="role" placeholder="역할/기능" />
+        <textarea data-field="arc" rows="3" placeholder="욕망, 결핍, 변화(캐릭터 아크)"></textarea>
+      </article>
+    </template>
+
+    <template id="plotTemplate">
+      <article class="item-box">
+        <div class="item-actions"><button class="icon danger" data-remove>삭제</button></div>
+        <input data-field="label" placeholder="플롯 비트명 (예: 촉발 사건)" />
+        <textarea data-field="detail" rows="3" placeholder="무슨 일이 벌어지는가? 왜 중요한가?"></textarea>
+      </article>
+    </template>
+
+    <template id="timelineTemplate">
+      <article class="item-box">
+        <div class="item-actions"><button class="icon danger" data-remove>삭제</button></div>
+        <input data-field="time" placeholder="시점 (예: 3장 직후 / 2042-03-11)" />
+        <textarea data-field="event" rows="2" placeholder="사건 내용"></textarea>
+      </article>
+    </template>
+
+    <template id="chapterTemplate">
+      <article class="item-box chapter-box">
+        <div class="item-actions"><button class="icon danger" data-remove>삭제</button></div>
+        <input data-field="title" placeholder="목차 제목" />
+        <textarea data-field="goal" rows="2" placeholder="이 장의 목표/기능"></textarea>
+        <textarea data-field="paragraphs" rows="6" placeholder="단락별로 줄바꿈하여 작성하세요."></textarea>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
