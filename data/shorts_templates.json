@@ -1,0 +1,22 @@
+[
+  {"name": "Pain to pattern", "order": ["hook", "problem", "emotion_example", "insight", "ending"]},
+  {"name": "Question then reveal", "order": ["hook", "problem", "insight", "emotion_example", "ending"]},
+  {"name": "Hard truth", "order": ["hook", "emotion_example", "problem", "insight", "ending"]},
+  {"name": "Contrast future", "order": ["hook", "problem", "insight", "ending", "cta"]},
+  {"name": "Myth bust", "order": ["hook", "problem", "insight", "emotion_example", "ending"]},
+  {"name": "Identity shift", "order": ["hook", "emotion_example", "insight", "problem", "ending"]},
+  {"name": "Discipline callout", "order": ["hook", "problem", "insight", "ending", "cta"]},
+  {"name": "Regret ladder", "order": ["hook", "emotion_example", "problem", "ending", "cta"]},
+  {"name": "One move reset", "order": ["hook", "problem", "insight", "ending", "cta"]},
+  {"name": "Micro habit", "order": ["hook", "insight", "problem", "emotion_example", "ending"]},
+  {"name": "Emotional mirror", "order": ["hook", "emotion_example", "insight", "problem", "ending"]},
+  {"name": "Behavior audit", "order": ["hook", "problem", "insight", "cta", "ending"]},
+  {"name": "Weekend trap", "order": ["hook", "problem", "emotion_example", "insight", "cta"]},
+  {"name": "Morning reset", "order": ["hook", "insight", "problem", "ending", "cta"]},
+  {"name": "Money identity", "order": ["hook", "problem", "insight", "ending", "cta"]},
+  {"name": "Debt pressure", "order": ["hook", "emotion_example", "problem", "insight", "ending"]},
+  {"name": "Leak hunt", "order": ["hook", "problem", "insight", "cta", "ending"]},
+  {"name": "No excuse", "order": ["hook", "problem", "emotion_example", "ending", "cta"]},
+  {"name": "Hard reset", "order": ["hook", "insight", "problem", "emotion_example", "ending"]},
+  {"name": "Future self", "order": ["hook", "problem", "insight", "ending", "cta"]}
+]

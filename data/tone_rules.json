@@ -1,0 +1,36 @@
+{
+  "fear": {
+    "voice": "urgent caution",
+    "allowed_intensity": "high",
+    "notes": "Use warnings and consequences, avoid panic claims."
+  },
+  "urgency": {
+    "voice": "fast decisive",
+    "allowed_intensity": "medium-high",
+    "notes": "Encourage immediate action with practical next steps."
+  },
+  "discipline": {
+    "voice": "firm coach",
+    "allowed_intensity": "medium",
+    "notes": "Focus on systems, consistency, and responsibility."
+  },
+  "regret": {
+    "voice": "reflective emotional",
+    "allowed_intensity": "medium",
+    "notes": "Highlight lost time and emotional costs without hopelessness."
+  },
+  "ambition": {
+    "voice": "aspirational competitive",
+    "allowed_intensity": "medium-high",
+    "notes": "Future-oriented messaging with effort and standards."
+  },
+  "compliance": {
+    "banned_phrases": [
+      "buy this now",
+      "guaranteed profit",
+      "risk-free money",
+      "double your money overnight"
+    ],
+    "no_financial_advice": true
+  }
+}

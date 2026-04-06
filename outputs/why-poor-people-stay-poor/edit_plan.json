@@ -1,0 +1,151 @@
+{
+  "project": "shorts-mvp",
+  "aspect_ratio": "9:16",
+  "timeline": [
+    {
+      "scene": 1,
+      "start": 0.0,
+      "end": 7.5,
+      "voiceover": "Nobody tells you this about money.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "cut"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 2,
+      "start": 7.5,
+      "end": 15.0,
+      "voiceover": "Why poor people stay poor is rarely about income alone.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "zoom"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 3,
+      "start": 15.0,
+      "end": 22.5,
+      "voiceover": "It feels like running hard but standing still.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "flash"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 4,
+      "start": 22.5,
+      "end": 30.0,
+      "voiceover": "Bills grow.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "swipe up"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 5,
+      "start": 30.0,
+      "end": 37.5,
+      "voiceover": "Confidence shrinks.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "glitch"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 6,
+      "start": 37.5,
+      "end": 45.0,
+      "voiceover": "Most people copy emergency behavior as a lifestyle.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "fade"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 7,
+      "start": 45.0,
+      "end": 52.5,
+      "voiceover": "Real progress starts when spending becomes intentional and identity-driven.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "cut"
+      },
+      "format": "9:16"
+    },
+    {
+      "scene": 8,
+      "start": 52.5,
+      "end": 60.0,
+      "voiceover": "Use discipline today: track one leak, cut one impulse, and redirect one dollar toward your future self.",
+      "subtitle_source": "subtitles.srt",
+      "visual": {
+        "stock_keywords": [
+          "money stress",
+          "city night",
+          "thinking person",
+          "discipline"
+        ],
+        "ai_image_prompt": "cinematic portrait, financial pressure, moody lighting, vertical 9:16",
+        "transition": "zoom"
+      },
+      "format": "9:16"
+    }
+  ],
+  "export_notes": "Compatible with FFmpeg, CapCut, and manual NLE workflows."
+}
