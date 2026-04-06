@@ -12,7 +12,7 @@ def test_pipeline_smoke(tmp_path: Path):
         topic="Why poor people stay poor",
         tone="discipline",
         duration=60,
-        n_titles=7,
+        n_titles=3,
         n_scenes=8,
         output_dir=str(out_dir),
     )
@@ -30,3 +30,6 @@ def test_pipeline_smoke(tmp_path: Path):
     ]
     for name in expected:
         assert (out_dir / name).exists(), name
+
+    titles_payload = (out_dir / "titles.json").read_text(encoding="utf-8")
+    assert '"titles"' in titles_payload
