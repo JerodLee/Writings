@@ -28,6 +28,7 @@ class Settings:
     timeframe: str = "1m"
     poll_interval_seconds: int = 15
     max_candles: int = 300
+    heartbeat_minutes: int = 60
 
     # Strategy tuning
     box_lookback: int = 30

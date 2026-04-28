@@ -1,0 +1,31 @@
+{
+  "family": "dual-edge-signal-bot",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "dual-edge-signal-bot",
+      "image": "<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/dual-edge-signal-bot:latest",
+      "essential": true,
+      "environment": [
+        {"name": "BITGET_BASE_URL", "value": "https://api.bitget.com"},
+        {"name": "BITHUMB_BASE_URL", "value": "https://api.bithumb.com"}
+      ],
+      "secrets": [
+        {"name": "TELEGRAM_BOT_TOKEN", "valueFrom": "arn:aws:ssm:<REGION>:<ACCOUNT_ID>:parameter/TELEGRAM_BOT_TOKEN"},
+        {"name": "TELEGRAM_CHAT_ID", "valueFrom": "arn:aws:ssm:<REGION>:<ACCOUNT_ID>:parameter/TELEGRAM_CHAT_ID"}
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/dual-edge-signal-bot",
+          "awslogs-region": "<REGION>",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

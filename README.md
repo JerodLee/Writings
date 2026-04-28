@@ -101,7 +101,7 @@ You should see logs in terminal and alerts in Telegram when strategy conditions 
 ## 5) Render Deployment
 
 1. Push this project to GitHub.
-2. In Render, create a **Background Worker**.
+2. In Render, create a **Background Worker** (free plan if available in your region/account).
 3. Connect your repo.
 4. Use:
    - Build command: `pip install -r requirements.txt`
@@ -113,9 +113,43 @@ You should see logs in terminal and alerts in Telegram when strategy conditions 
    - `BITHUMB_BASE_URL`
 6. Deploy.
 
+### Quick option with `render.yaml`
+
+- This repo includes `render.yaml` so Render can auto-detect worker settings.
+- You can use **Blueprint Deploy** in Render and then only fill secret env vars.
+
 ---
 
-## 6) Safety Notes
+## 6) Free-server first, then AWS porting
+
+### Step A: Free server (Render)
+
+1. Deploy from this repo using `render.yaml`.
+2. Confirm worker logs show:
+   - startup message
+   - periodic heartbeat (`💓`) every `heartbeat_minutes`
+   - strategy loop logs
+3. Confirm Telegram receives:
+   - `dual_edge_signal_bot started`
+   - heartbeat messages
+   - signal alerts (when conditions trigger)
+
+### Step B: Port to AWS (ECS Fargate)
+
+This repo includes:
+- `Dockerfile`
+- `deploy/aws/ecs-task-definition.json` (template)
+
+Migration path:
+1. Build and push Docker image to ECR.
+2. Store `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in SSM Parameter Store.
+3. Create/update ECS Task Definition from `deploy/aws/ecs-task-definition.json`.
+4. Run 1-task ECS Service (desired count `1`) for continuous bot execution.
+5. Verify CloudWatch logs + Telegram heartbeat.
+
+---
+
+## 7) Safety Notes
 
 - This is an **alert bot**, not an execution bot.
 - It does **not** call any private trading endpoint.
@@ -124,7 +158,7 @@ You should see logs in terminal and alerts in Telegram when strategy conditions 
 
 ---
 
-## 7) Customization Tips
+## 8) Customization Tips
 
 - Change symbols in `config.py`.
 - Tune thresholds in `strategy/m1.py` and `strategy/spring.py`.

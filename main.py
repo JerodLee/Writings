@@ -113,8 +113,10 @@ def run_bot() -> None:
     # Optional Bitget websocket for CVD approximation (non-blocking thread).
     ws_thread = threading.Thread(target=bitget.stream_trades, args=(cvd_state.update,), daemon=True)
     ws_thread.start()
+    notifier.send_message("✅ dual_edge_signal_bot started. Alert-only mode is active.")
 
     last_sent_key: set[str] = set()
+    last_heartbeat = time.time()
 
     while True:
         try:
@@ -156,6 +158,13 @@ def run_bot() -> None:
                     notifier.send_message(msg)
                     append_signal_log(name, symbol, signal)
                     logger.info("Signal sent: %s", signal_key)
+
+            # Optional heartbeat to confirm worker is still alive.
+            if time.time() - last_heartbeat >= settings.heartbeat_minutes * 60:
+                notifier.send_message(
+                    f"💓 dual_edge_signal_bot heartbeat ({datetime.now(timezone.utc).isoformat()})"
+                )
+                last_heartbeat = time.time()
 
             time.sleep(settings.poll_interval_seconds)
 
