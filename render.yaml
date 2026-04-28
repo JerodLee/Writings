@@ -1,0 +1,17 @@
+services:
+  - type: worker
+    name: dual-edge-signal-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: BITGET_BASE_URL
+        value: https://api.bitget.com
+      - key: BITHUMB_BASE_URL
+        value: https://api.bithumb.com
