@@ -29,6 +29,40 @@ PowerShell 정책 오류가 나면 현재 세션에서만 아래를 실행한 �
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
+## 무료 배포 가이드 (권장: Streamlit Community Cloud)
+> 무료 + Streamlit 네이티브라서 MVP 배포에 가장 간단합니다.
+
+### 1) GitHub 저장소 준비
+- `us_momentum_scanner/` 폴더가 포함된 브랜치를 GitHub에 push.
+- 메인 엔트리 파일은 `us_momentum_scanner/app.py`.
+
+### 2) Streamlit Cloud에 앱 생성
+1. https://share.streamlit.io 접속 후 로그인
+2. **New app** 클릭
+3. Repository: 본 저장소 선택
+4. Branch: 배포 브랜치 선택
+5. Main file path: `us_momentum_scanner/app.py`
+6. Deploy 클릭
+
+### 3) 배포 환경변수(Secrets) 설정
+앱 설정의 **Secrets**에 아래 항목을 등록:
+
+```toml
+FINNHUB_API_KEY=""
+ALPHA_VANTAGE_API_KEY=""
+SEC_USER_AGENT="YourName your_email@example.com"
+```
+
+### 4) 배포 확인
+- 앱 URL 접속
+- `오늘 스캔 실행` 버튼 클릭
+- 후보 테이블 혹은 `오늘은 강한 후보 없음` 메시지 출력 확인
+
+## 대안 무료 배포 (Hugging Face Spaces)
+- Space 생성 시 SDK를 **Streamlit**으로 선택.
+- Root를 `us_momentum_scanner/` 기준으로 맞추고 `app.py`를 엔트리로 지정.
+- `requirements.txt`, `runtime.txt`, `.streamlit/config.toml`을 그대로 사용.
+
 ## TODO (Phase 2 이후)
 - bid-ask spread 기반 거래 가능성 필터
 - 호가 공백 분석
